@@ -1,0 +1,37 @@
+
+
+import java.util.*;
+public class array_right_rotate
+{
+    void rotate (int n,int rc) {
+        Scanner sc = new Scanner(System.in);
+        int arr[] = new int[n];
+        System.out.println("Enter the array values");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("Initial array = "+ Arrays.toString(arr));
+        int arr2[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            if (i + rc > (n - 1)) {
+                int k = i + rc;
+                int d = k - (n - 1);
+                arr2[d - 1] = arr[i];
+            } else {
+                arr2[i + rc] = arr[i];
+            }
+        }
+        System.out.println("Rotated array = "+Arrays.toString(arr2));
+    }
+        public static void main(String args[])
+        {
+            Scanner sc=new Scanner (System.in);
+            System.out.println("Enter the size of the array");
+            int m=sc.nextInt();
+            System.out.println("Enter the array roatate count");
+            int rrc= sc.nextInt();
+            array_right_rotate r_r=new array_right_rotate();
+            r_r.rotate(m,rrc);
+        }
+
+}
